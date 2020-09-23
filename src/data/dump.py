@@ -222,7 +222,7 @@ class Dump:
                 hrefs = x.find('a')
                 if '+' not in str(hrefs) and hrefs != None:
                     name = str(x.text)
-                    uid = re.findall(r'\/profile.php\?id=(\d+)$' if 'profile.php?id=' in str(x) else '\/(.*?)\?', str(hrefs['href']))
+                    uid = re.findall(r'\/profile.php\?id=(\d+)$' if 'profile.php?id=' in str(x) else '\/(.*?)$', str(hrefs['href']))
                     prints(f'\r      !m!-!ran!  {name}', blank_right=int(len(self.proccess)-20))
                     if int(len(self.__id__)) == max or int(len(self.__id__)) > max:
                         stop = True
